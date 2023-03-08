@@ -1,5 +1,5 @@
 # В заданной строке расположить в обратном порядке все слова.
-my_str = str(input("Введите фразу: "))
+my_str = (input("Введите фразу: "))
 print(my_str)
 my_list = my_str.split()
 print(my_list)
