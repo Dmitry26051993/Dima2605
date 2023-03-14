@@ -9,4 +9,11 @@ while True:
     else:
         break
 print(a)
+b = 0
+while True:
+    l = input("Введите числа: ")
+    if l == "stop":
+        break
+    b += int(l)
+    print(b)
 # Суммировать до тех пор, пока пользователь не введёт слово «стоп».
