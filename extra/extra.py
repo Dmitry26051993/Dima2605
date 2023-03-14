@@ -45,7 +45,7 @@ def find_median(arr):
     else:
         return -1
 print(find_median(arr))
-# 7*. Найти верхнюю и нижнюю квартиль
+# 7*. Найти верхнюю и нижнюю квартиль.
 for i in range(len(arr)):
     for j in range(i, len(arr)):
         if arr[i] > arr[j]:
@@ -64,4 +64,3 @@ if index_v_dkvar % 1:
 else:
     result = (arr[int_index] + arr[int_index + 1]) / 2
     print(result)
-
