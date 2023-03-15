@@ -10,4 +10,3 @@ for i in range(a, b + 1, 1):
     n += 1
     print(i, " : ", n)
 print("N = ", n)
-

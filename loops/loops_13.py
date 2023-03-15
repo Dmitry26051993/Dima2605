@@ -4,4 +4,3 @@ arr = ["Петрова", "Булкина", "Петренкова", "Астепе
 for i in arr:
     if i.startswith("П") and i.endswith("а"):
         print(i)
-

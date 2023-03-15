@@ -13,5 +13,3 @@ while num <= n:
 print(sum_)
 sum_1 = [(i ** 3) for i in range(1, n + 1)]
 print(sum(sum_1))
-
-
