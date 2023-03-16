@@ -12,4 +12,3 @@ for i in my_str:
     if i > 10:
         result += i
 print(result)
-
