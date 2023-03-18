@@ -1,6 +1,9 @@
 # Дан список целых чисел.
 # Создать новый список, каждый элемент которого равен исходному элементу умноженному на -2
-a = [2, 2, 4, 3]
-for i in range(len(a)):
-    a[i] *= -2
-print(a)
+arr = [i for i in range(1, 10)]
+print(arr)
+new_arr = []
+for element in arr:
+    new_element = element * -2
+    new_arr.append(new_element)
+print(new_arr)

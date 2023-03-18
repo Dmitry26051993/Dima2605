@@ -5,18 +5,11 @@
 # предоставить 2 решения.
 # Одно с использованием цикла while, другое с использованием цикла for с параметром.
 # Оба решения предоставить в одном файле.
-n = int(input("Фибоначчи: "))
-fib1 = fib2 = 1
-print(fib1, fib2, end=' ')
-for i in range(2, n):
-    fib1, fib2 = fib2, fib1 + fib2
-    print(fib2, end=' ')
-
-f1 = f2 = 1
-print(f1, f2, end=' ')
-i = 2
-while i < n:
-    f1, f2 = f2, f1 + f2
-    print(f2, end=' ')
-    i += 1
-print()
+arr = [1, 1]
+for i in range(13):
+    arr.append(arr[-1] + arr[-2])
+print(arr, len(arr))
+arr = [1, 1]
+while len(arr) < 15:
+    arr.append(arr[-1] + arr[-2])
+print(arr, len(arr))
