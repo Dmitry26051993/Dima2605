@@ -17,26 +17,25 @@ while count < list:
     count = count + 1
 print(a / list)
 # 3. Найти среднее геомнтрическое
-import math
-c = 1
-for i in range(0, len(arr)):
-    c = c * arr[i]
-c1 = (float)(math.pow(c, (1 / len(arr))))
-res = (float)(c1)
-print(str(res))
+a = 1
+i = 0
+while i < len(arr):
+    a *= arr[i]
+    i = i + 1
+print(pow(a, 1 / len(arr)))
 # 4. Найти массив квадратов.
-b = [i ** 2 for i in arr]
-print(b)
-i = 1
-
+i = 0
+while i < len(arr):
+    arr[i] = arr[i] ** 2
+    i += 1
+print(arr)
 # 5*. Найти кумулятивную сумму
-cum_list = []
-y = 0
-for x in range(0, len(arr)):
-    y += arr[x]
-    cum_list.append(y)
-print(cum_list)
-
+arr = [1, 2, 3, 4, 4, 4, 5, 5, 2]
+i = 1
+while i < len(arr):
+    arr[i] = arr[i] + arr[i - 1]
+    i += 1
+print(arr)
 # 6*. Найти медианy
 import math
 def find_median(arr):
