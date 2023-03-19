@@ -3,8 +3,7 @@ import random
 arr = []
 i = 1
 count = 0
-arr = [random.randint(-10, 10) for i in range(1, 20)]
+arr = [random.randint(1, 10) for i in range(19)]
 print(arr)
 # Определить максимльное число и заменить им все четные по значению элементы.
-max_num = max(arr)
-print(max_num)
+print(list(map(lambda x: max(arr) if x % 2 == 0 else x, arr)))
