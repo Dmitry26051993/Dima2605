@@ -37,15 +37,19 @@ while i < len(arr):
     i += 1
 print(arr)
 # 6*. Найти медианy
-import math
-def find_median(arr):
-    if len(arr) % 2 == 1:
-        med = math.ceil(len(arr)/2)-1
-        return arr[med]
-    else:
-        return -1
-print(find_median(arr))
+arr = [1, 2, 3, 4, 4, 4, 5, 5, 2]
+sorted_array = sorted(arr)
+count_array = 0
+while arr:
+    arr.pop()
+    count_array += 1
+if count_array % 2 == 0:
+    median = (sorted_array[count_array//2] + sorted_array[(count_array//2)-1])/2
+else:
+    median = sorted_array[count_array // 2]
+print(median)
 # 7*. Найти верхнюю и нижнюю квартиль.
+arr = [1, 2, 3, 4, 4, 4, 5, 5, 2]
 for i in range(len(arr)):
     for j in range(i, len(arr)):
         if arr[i] > arr[j]:
