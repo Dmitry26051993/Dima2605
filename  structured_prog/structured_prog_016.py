@@ -15,3 +15,16 @@ for j in range(len(arr)-2):
 if arr[-1] > arr[-2] > arr[-3]:
     result += 1
 print(result)
+arr = [random.randint(1, 9) for el in range(15)]
+print(arr)
+result = 0
+count = 0
+flag = True
+for i in range(len(arr)-1):
+    if arr[i] < arr[i + 1]:
+        if flag:
+            result += 1
+            flag = False
+    else:
+        flag = True
+print(result)

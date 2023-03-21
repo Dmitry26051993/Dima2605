@@ -14,3 +14,13 @@ for i in range(min(n, m)):
     r = arr[i].index(max(arr[i]))
     arr[i][i], arr[i][r] = arr[i][r], arr[i][i]
 print(arr)
+matrix = [[randint(1, 9)for _ in range(4)] for _ in range(4)]
+for arr in matrix:
+    print(arr)
+for index, arr in enumerate(matrix):
+     max_elem = max(arr)
+     index_max_elem =arr.index(max_elem)
+     arr[index], arr[index_max_elem] = arr[index_max_elem], arr[index]
+print("After replase")
+for arr in matrix:
+    print(arr)
