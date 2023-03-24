@@ -9,3 +9,16 @@ def main():
     arr = [[randint(random_from, random_to) for _ in range(n)] for _ in range(n)]
     print(*arr, sep='\n')
 main()
+
+def create_matrix(n, random_from = 1, random_to = 9):
+    matrix = []
+    for _ in range(n):
+        arr_in = []
+        for _ in range(n):
+            arr_in.append(randint(random_from, random_to))
+            matrix.append(arr_in)
+    return matrix
+def main():
+    print(create_matrix(3))
+if __name__ == '__main__':
+    main()
