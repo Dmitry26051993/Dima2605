@@ -15,7 +15,7 @@ centimeters_to_inches = 2
 kilometrs_to_miles = 3
 miles_to_kilometrs = 4
 exit = 5
-def main():
+def my_func():
     dict = {"inces": 2.54, "cent": 0.3937, "miles": 0.6214, "kil": 1.61}
     choice = 0
     while choice != exit:
@@ -23,7 +23,7 @@ def main():
         choice = int(input("Выберите вариант: "))
         if choice == inches_to_centimeters:
             num = int(input("Введите число: "))
-            result = dict["inces"]*num
+            result = dict["inces"] * num
             print(f"{result} centimeters")
         elif choice == centimeters_to_inches:
             num = int(input("Введите число: "))
@@ -38,9 +38,10 @@ def main():
             result3 = dict["kil"] * num
             print(f"{result3} kilometrs")
         elif choice == exit:
-            print("Выходим из программы: ")
+            print("Выходим из программы ")
         else:
             print("Ошибка: недопустимый выбор.")
+
 def display_menu():
     print("Меню: ")
     print("1. Из дюймов в сантиметры ")
@@ -48,7 +49,14 @@ def display_menu():
     print("3. Из километров в мили ")
     print("4. Из милей в километры")
     print("5. Выход")
-main()
+
+def main():
+    my_func()
+if __name__ == '__main__':
+    main()
+
+
+
 
 
 
