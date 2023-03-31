@@ -11,7 +11,8 @@ def my_decorator(func):
 
 
 @my_decorator
-def real_func(x):
-    print(x)
+def real_func(arr):
+    return arr
 
-real_func([randint(1, 10) for i in range(10)])
+arr = [randint(1, 10) for i in range(10)]
+print(real_func(arr))
