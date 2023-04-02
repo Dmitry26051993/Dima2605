@@ -22,4 +22,26 @@ def col(n):
         arr.append(n)
     for i in arr:
         print(i, end=' ')
+
 col(int(input("Введите число: ")))
+
+def colltz(n):
+    my_dict = {}
+    for i in range(2, n + 1):
+        item = i
+        my_list = []
+        while item != 1:
+            if item % 2:
+                item = 3 * item + 1
+                my_list.append(item)
+            else:
+                item = item // 2
+                my_list.append(item)
+        my_dict[len(my_list)] = str(i)
+
+    max_length = max(my_dict.keys())
+    return int(my_dict[max_length]), max_length
+def main():
+    print(colltz(3))
+if __name__ == '__main__':
+   main()
