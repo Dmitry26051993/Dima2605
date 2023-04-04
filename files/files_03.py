@@ -8,3 +8,9 @@ with open("text.txt", "a") as file:
 print("--------------")
 with open("text.txt") as file:
     file.close()
+with open("text.txt", "a") as file:
+    s =[]
+    for _ in range(3):
+        text = input("Введите текст: ")
+        s.append(f"{text}\n")
+    file.writelines(s)
