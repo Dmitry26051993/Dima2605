@@ -40,8 +40,6 @@ def delete(name, index=-1):
     rows = read(name)
     rows.pop(index)
     write(name, rows)
-
-
 def summa(name):
     rows = read(name)
     summa = 0
@@ -49,8 +47,6 @@ def summa(name):
         summa += float(rows[1]) * float(rows[2])
     # summa = sum([float(row[1]) * float(row[2]) for row in rows[1:]])
     return summa
-
-
 def max_price(name):
     rows = read(name)
     max_price = max([float(row[1]) for row in rows[1:]])
