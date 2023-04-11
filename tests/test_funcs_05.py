@@ -1,9 +1,4 @@
-def sum_args(*args):
-    print(args, type(args))
-    result = 0
-    for index, number in enumerate(args):
-        result = index * number
-    return result
+from funcs.funcs_05 import sum_args
 def test_sum_args():
     assert sum_args(1, 2, 5) == 9
 

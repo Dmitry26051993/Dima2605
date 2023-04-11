@@ -1,11 +1,6 @@
-from random import randint
-def create_matrix(n, random_from = 1, random_to = 9):
-    matrix = []
-    for _ in range(n):
-        arr_in = []
-        for _ in range(n):
-            arr_in.append(randint(random_from, random_to))
-            matrix.append(arr_in)
-    return matrix
+from funcs.funcs_04 import create_matrix
+res = [[1, 2, 3], [1, 2, 3], [1, 2, 3]]
 def test_create_matrix():
-    assert create_matrix
+   result = create_matrix(3)
+   assert len(result) == len(res)
+   assert len(result[0]) == 3
