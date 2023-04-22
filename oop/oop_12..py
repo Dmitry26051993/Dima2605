@@ -19,15 +19,36 @@
 # Заменить имена методов bark, meow на voice.
 # Добавить voice для класса Parrot.
 # Создать функцию, принимающую список животных и вызывающую у каждого животного метод voice.
-
-class Pet:
-
+# Определить магические методы сравнения для класса Pet:
+# на равенство и неравенство. Два животных равны тогда,
+# когда равны их возрасты, их рост и вес и класс.
+import random
+import string
+from abc import ABC, abstractmethod
+class Pet(ABC):
+    __count = 0
+    very_important = True
     def __init__(self, name, age, master, height, weight):
         self.name = name
         self.__age = age
         self.master = master
         self.weight = weight
         self.height = height
+        Pet.__count += 1
+
+    @staticmethod
+    def get_random_name():
+        result = random.choice(string.ascii_uppercase) + '-' + str(random.randint(1, 99))
+        return result
+
+    @classmethod
+    def get_counter(cls):
+        return cls.__count
+
+    @staticmethod
+    def go():
+        print('go')
+
 
     def run(self):
         print(f'run {self.name}')
@@ -55,6 +76,18 @@ class Pet:
             self.height += arg
         else:
             self.height += 0.2
+
+    def __str__(self):
+        return f'pet from class {self.__class__}- {self.name}'
+
+    def __repr__(self):
+        return f'repr for class {self.__class__}- {self.name}'
+
+    def __eq__(self, other):
+        return (self.name, self.__age, self.height, type(self)) == (other.name, other.__age, other.height, type(other))
+
+    def __ne__(self, other):
+        return (self.name, self.__age, self.height, type(self)) != (other.name, other.__age, other.height, type(other))
 
 class Dog(Pet):
 
@@ -131,4 +164,7 @@ cat.voice()
 dog.voice()
 parrot.voice()
 
+print(Pet.get_counter())
+print(Pet.get_random_name())
+print(Pet.get_random_name())
 
