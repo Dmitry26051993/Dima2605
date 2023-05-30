@@ -8,7 +8,7 @@ def find_me_book():
     engine = create_engine('sqlite:///sa_test.db')
     with engine.connect() as connection:
         ago = int(input("Введите год издания книги: "))
-        select_query_text = f"""select * from book where releace_year < {ago}"""
+        select_query_text = f"""select * from book where release_year < {ago}"""
         query = text(select_query_text)
         data = list(connection.execute(query))
         print(data)

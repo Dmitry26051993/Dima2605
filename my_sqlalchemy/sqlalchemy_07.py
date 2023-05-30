@@ -1,7 +1,7 @@
 # Получить все книги и вывести их на экран в формате год - название - автор
 from sqlalchemy import create_engine
 from my_sqlalchemy.book import Book
-from sqlalchemy.orm import sessionmaker, mapper, registry
+from sqlalchemy.orm import sessionmaker,registry
 from my_sqlalchemy.sqlalchemy_05 import users_table
 engine1 = create_engine('sqlite:///book.db', echo=True)
 Ssesion = sessionmaker(bind=engine1)

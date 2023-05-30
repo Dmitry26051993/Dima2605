@@ -8,7 +8,7 @@ with engine.connect() as connection:
     pages = int(input('pages: '))
     author = input('author: ')
     price = float(input('price: '))
-    releace_year = int(input('releace_year: '))
+    releace_year = int(input('release_year: '))
     try:
         create_table_query = f"""
             insert into Book (title, pages,
