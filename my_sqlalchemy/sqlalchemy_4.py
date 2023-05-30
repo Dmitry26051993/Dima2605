@@ -8,7 +8,7 @@ with engine.connect() as connection:
     pages = int(input('pages: '))
     author = input('author: ')
     price = float(input('price: '))
-    releace_year = int(input('release_year: '))
+    release_year = int(input('release_year: '))
     try:
         create_table_query = f"""
             insert into Book (title, pages,
@@ -21,13 +21,13 @@ with engine.connect() as connection:
             pages=pages,
             author=author,
             price=price,
-            releace_year=releace_year
+            release_year=release_year
         )
         connection.execute(ddl)
         choise_trans = input(f'do you want to save book with '
                              f'id={id}, title={title}, pages={pages}, '
                              f'author={author}, price={price},'
-                             f' releace_year={releace_year} \n'
+                             f' releace_year={release_year} \n'
                              f'press y to save, something else for no: ')
         if choise_trans in 'yY':
             transaction.commit()
