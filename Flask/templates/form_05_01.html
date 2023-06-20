@@ -6,14 +6,14 @@
 </head>
 <body>
 
-<h1>user was added to file:</h1>
-<h2>{{data_for_template.name}}</h2>
-<h2>{{data_for_template.lastname}}</h2>
-<h2>{{data_for_template.age}}</h2>
+<h1>user was added to file :</h1>
+<h1>{{ data_for_template.name }}</h1>
+<h1>{{ data_for_template.lastname }}</h1>
+<h1>{{ data_for_template.age }}</h1>
 
 
-<form action="{{url_for('custom_login')}}" method="get">
-    <p>Если хотите добавить нового пользователя, нажмите на кнопку</p>
+<form action="{{ url_for('custom_login')}}" method="get">
+    <p>Для добавления нового пользователя нажмите кнопку</p>
     <input type="submit" value="submit">
 
 </form>
