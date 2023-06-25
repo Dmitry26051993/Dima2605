@@ -5,7 +5,11 @@
     <title>groups</title>
 </head>
 <body>
+<<<<<<< HEAD
 <p><a href="{{ url_for('add_group')}}">for adding group - press on these link</a></p>
+=======
+<p><a href="{{ url_for('add_group')}}">for adding group - press on thise link</a></p>
+>>>>>>> b8dca994f7847a654cbadea8449e26344567c216
 
 <table border="1">
     <tr>
@@ -17,7 +21,11 @@
     {% for group in groups %}
     <tr>
         <td>{{ group.id }}</td>
+<<<<<<< HEAD
         <td><a href="{{ url_for('students', group_id=group.id)}}">{{ group.name }}</a></td>
+=======
+        <td>{{ group.name }}</td>
+>>>>>>> b8dca994f7847a654cbadea8449e26344567c216
         <td><a href="{{ url_for('update_group', group_id=group.id)}}">update</a></td>
         <td><a href="{{ url_for('delete_group', group_id=group.id)}}">delete</a></td>
     </tr>

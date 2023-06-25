@@ -19,6 +19,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///flaskschoollesson.db'
 db = SQLAlchemy(app)
 
 
+<<<<<<< HEAD
 class BaseForSchool(db.Model):
 
     __abstract__ = True
@@ -36,11 +37,18 @@ class BaseForSchool(db.Model):
 
 
 class Group(BaseForSchool):
+=======
+class Group(db.Model):
+>>>>>>> b8dca994f7847a654cbadea8449e26344567c216
     id = db.Column('id', db.Integer, primary_key=True)
     name = db.Column(db.String(100))
 
 
+<<<<<<< HEAD
 class Student(BaseForSchool):
+=======
+class Student(db.Model):
+>>>>>>> b8dca994f7847a654cbadea8449e26344567c216
     id = db.Column('id', db.Integer, primary_key=True)
     firstname = db.Column(db.String(100))
     lastname = db.Column(db.String(100))
@@ -60,6 +68,7 @@ def add_group():
         return render_template('form_add_group.html')
     else:
         group = Group(name=request.form['name'])
+<<<<<<< HEAD
         group.save()
         return redirect(url_for('read_groups'))
 
@@ -107,6 +116,13 @@ def update_student():
         return redirect(url_for('students', group_id=request.form['group_id']))
 
 
+=======
+        db.session.add(group)
+        db.session.commit()
+        return redirect(url_for('read_groups'))
+
+
+>>>>>>> b8dca994f7847a654cbadea8449e26344567c216
 @app.route('/update_group/', methods=['POST', 'GET'])
 def update_group():
     if request.method == 'GET':
@@ -116,18 +132,29 @@ def update_group():
         group = db.session.query(Group). \
             filter_by(id=request.args.get('group_id')). \
             first()
+<<<<<<< HEAD
         # group = Group.query.get(request.args.get('group_id'))
         group.name = request.form['name']
         group.update()
+=======
+        group.name = request.form['name']
+        db.session.commit()
+>>>>>>> b8dca994f7847a654cbadea8449e26344567c216
         return redirect(url_for('read_groups'))
 
 
 @app.route('/delete_group/')
 def delete_group():
     group_id = request.args.get('group_id')
+<<<<<<< HEAD
     # Group.query.delete(group_id)
     group = db.session.query(Group).get(group_id)
     group.delete()
+=======
+    group = db.session.query(Group).filter_by(id=group_id)
+    group.delete()
+    db.session.commit()
+>>>>>>> b8dca994f7847a654cbadea8449e26344567c216
     return redirect(url_for('read_groups'))
 
 

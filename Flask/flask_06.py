@@ -95,6 +95,14 @@ def delete():
 
 
 if __name__ == '__main__':
+<<<<<<< HEAD
     with app.app_context():
         db.create_all()
     app.run()
+=======
+    if not os.path.exists('flask_05.csv'):
+        with open('flask_05.csv', 'w') as file:
+            csvwriter = csv.writer(file)
+            csvwriter.writerow(["user", 'lastname', 'age'])
+    app.run()
+>>>>>>> b8dca994f7847a654cbadea8449e26344567c216
